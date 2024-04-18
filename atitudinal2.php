@@ -46,82 +46,82 @@ checar();
     function mostrarNomeIdadeAlunos($alunos) {
     foreach ($alunos as $aluno) {
         echo "Nome: " . $aluno['nome'] . ", Idade: " . $aluno['idade'] . "\n";
+        }
     }
-}
 
-$alunos = [
-    [
-        "nome" => "João",
-        "idade" => 20
-    ],
-    [
-        "nome" => "Maria",
-        "idade" => 22
-    ],
-    [
-        "nome" => "José",
-        "idade" => 21
-    ]
-];
+    $alunos = [
+        [
+            "nome" => "João",
+            "idade" => 20
+        ],
+        [
+            "nome" => "Maria",
+            "idade" => 22
+        ],
+        [
+            "nome" => "José",
+            "idade" => 21
+        ]
+    ];
 mostrarNomeIdadeAlunos($alunos);
 
   //////////////////////////////////////////////////////////////////////////
 
-function cadastrarUsuario($usuarios, $novoUsuario) {
-    if (strlen($novoUsuario['nome']) <= 3) {
-        echo "Erro: O nome do usuário deve ter mais que 3 caracteres.";
-        return;
-    }
-
-    if ($novoUsuario['idade'] <= 18) {
-        echo "Erro: A idade do usuário deve ser maior que 18.";
-        return;
-    }
-
-    if (strlen($novoUsuario['email']) <= 10) {
-        echo "Erro: O email do usuário deve ter mais que 10 caracteres.";
-        return;
-    }
-
-    if (strlen($novoUsuario['senha']) <= 8) {
-        echo "Erro: A senha do usuário deve ter mais que 8 caracteres.";
-        return;
-    }
-
-    foreach ($usuarios as $usuario) {
-        if ($usuario['email'] === $novoUsuario['email']) {
-            echo "Erro: Este email já está cadastrado.";
+    function cadastrarUsuario($usuarios, $novoUsuario) {
+        if (strlen($novoUsuario['nome']) <= 3) {
+            echo "Erro: O nome do usuário deve ter mais que 3 caracteres.";
             return;
         }
+    
+        if ($novoUsuario['idade'] <= 18) {
+            echo "Erro: A idade do usuário deve ser maior que 18.";
+            return;
+        }
+    
+        if (strlen($novoUsuario['email']) <= 10) {
+            echo "Erro: O email do usuário deve ter mais que 10 caracteres.";
+            return;
+        }
+    
+        if (strlen($novoUsuario['senha']) <= 8) {
+            echo "Erro: A senha do usuário deve ter mais que 8 caracteres.";
+            return;
+        }
+    
+        foreach ($usuarios as $usuario) {
+            if ($usuario['email'] === $novoUsuario['email']) {
+                echo "Erro: Este email já está cadastrado.";
+                return;
+            }
     }
 
     $usuarios[] = $novoUsuario;
     echo "Usuário cadastrado com sucesso!";
     return $usuarios;
-}
-
-$usuarios = [
-    [
-        "nome" => "João",
-        "idade" => 20,
-        "email" => "email@email.com",
-        "senha" => "12345678"
-    ],
-    [
-        "nome" => "Guilherme",
-        "idade" => 17,
-        "email" => "meu.email@email.com",
-        "senha" => "abc12312312"
-    ]
-];
-
-$novoUsuario = [
-    "nome" => "John Doe",
-    "idade" => 25,
-    "email" => "johndoe@email.com",
-    "senha" => "pass54321"
-];
-
-cadastrarUsuario($usuarios, $novoUsuario);
+    }
+    
+    $usuarios = [
+        [
+            "nome" => "João",
+            "idade" => 20,
+            "email" => "email@email.com",
+            "senha" => "12345678"
+        ],
+        [
+            "nome" => "Guilherme",
+            "idade" => 17,
+            "email" => "meu.email@email.com",
+            "senha" => "abc12312312"
+        ]
+    ];
+    
+    $novoUsuario = [
+        "nome" => "John Doe",
+        "idade" => 25,
+        "email" => "johndoe@email.com",
+        "senha" => "pass54321"
+    ];
+    
+    cadastrarUsuario($usuarios, $novoUsuario);
 
 ?>
