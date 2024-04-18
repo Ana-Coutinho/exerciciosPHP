@@ -42,26 +42,29 @@
 
   //////////////////////////////////////////////////////////////////////////
 
-    function mostrardados(){
-    $pessoas = [
-        $pessoa1=[
-            "nome" => "João",
-            "idade" => 20
-        ],
-        $pessoa2=[
-            "nome" => "Maria",
-            "idade" => 22
-        ],
-        $pessoa3=[
-            "nome" => "José",
-            "idade" => 21
-        ]
-    ];
-    
-    
-    
+    function mostrarNomeIdadeAlunos($alunos) {
+    foreach ($alunos as $aluno) {
+        echo "Nome: " . $aluno['nome'] . ", Idade: " . $aluno['idade'] . "\n";
     }
-    mostrardados();
-    }
+}
+
+$alunos = [
+    [
+        "nome" => "João",
+        "idade" => 20
+    ],
+    [
+        "nome" => "Maria",
+        "idade" => 22
+    ],
+    [
+        "nome" => "José",
+        "idade" => 21
+    ]
+];
+mostrarNomeIdadeAlunos($alunos);
+
+  //////////////////////////////////////////////////////////////////////////
+
 
 ?>
