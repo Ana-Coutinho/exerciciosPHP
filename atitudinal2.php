@@ -42,4 +42,26 @@
 
   //////////////////////////////////////////////////////////////////////////
 
+    function mostrardados(){
+    $pessoas = [
+        $pessoa1=[
+            "nome" => "João",
+            "idade" => 20
+        ],
+        $pessoa2=[
+            "nome" => "Maria",
+            "idade" => 22
+        ],
+        $pessoa3=[
+            "nome" => "José",
+            "idade" => 21
+        ]
+    ];
+    
+    
+    
+    }
+    mostrardados();
+    }
+
 ?>
