@@ -9,16 +9,17 @@
         "pago" => false
     ];
     
-    if($paym['dia_pag']<2 and
-    $paym['mes_pag']<=2 and 
-    $paym['ano_pag']<=2024 ){
-        $paym['pago'] == true;
+    if ($paym['dia_pag'] < 2 and
+        $paym['mes_pag'] <= 2 and 
+        $paym['ano_pag'] <= 2024) {
+        $paym['pago'] = true;
     }
     
-    echo $paym['pago'];
-    
-    }
-    checar();
+    echo $paym['pago'] ? 'Verdadeiro' : 'Falso';
+}
+
+checar();
+
   //////////////////////////////////////////////////////////////////////////
 
     function media() {
